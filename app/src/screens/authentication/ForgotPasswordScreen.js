@@ -7,9 +7,7 @@ import AuthenticationButton from '../../components/AuthenticationButton';
 import InputText from '../../components/InputText';
 
 const ForgotPasswordScreen = ({navigation}) => {
-  //const [firstName, setFirstName] = useState('');
-  //const [lastName, setLastName] = useState('');
-  //const [mobileNumber, setMobileNumber] = useState('');
+  
   const [email, setEmail] = useState('');
   const [ans, setAns] = useState('');
   const [pickerValue,setPickerValue]=useState('');
@@ -29,8 +27,7 @@ const ForgotPasswordScreen = ({navigation}) => {
 
 
   useEffect(() => {
-     //fetchData(props.route.params.emailID);
-     //console.log(props.route.params.emailID);
+     
      
   }, []);
 
@@ -43,18 +40,7 @@ const ForgotPasswordScreen = ({navigation}) => {
     setEmail(data.email)
     setPassword(data.password)
   }
-//   const getData = async () => {
-//     try {
-//       const value = await AsyncStorage.getItem('userName');
-//       if (value !== null) {
-//         setName(value);
-//       }
 
-//     } catch (error) {
-//       console.warn('error in getData');
-//       console.warn(error);
-//     }
-//   };
 
 return(
 
@@ -65,11 +51,7 @@ return(
  
  <View style={styles.upper}>
 
-  {/* <Text style={styles.output}>Email Id</Text> */}
-  {/* <InputText
-        Placeholder={'Mobile Number'}
-        onChangeText={value => setMobileNumber(value)}
-      /> */}
+  
   
   <InputText
   Placeholder={'Email'} 
@@ -116,7 +98,6 @@ const styles= StyleSheet.create({
     backgroundColor:'#dae685',
   },
   upper: {
-    //flex:6,
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: '10%',
@@ -124,7 +105,6 @@ const styles= StyleSheet.create({
     
   },
   head:{
-    //flex:6,
     justifyContent:'center',
     alignItems: 'center',
     },

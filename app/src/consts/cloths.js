@@ -48,6 +48,13 @@ const cloths = [
         type: 'Foxhound',
         age: '2 years old',
       },
+      {
+        id: '4',
+        name: 'Sporty Look Shoes',
+        image: require('../../res/assets/shoe5.jpg'),
+        type: 'Foxhound',
+        age: '2 years old',
+      },
     ],
   },
   {
@@ -71,6 +78,12 @@ const cloths = [
         image: require('../../res/assets/sun3.jpg'),
         
       },
+      {
+        id: '4',
+        name: 'Orange sun protect',
+        image: require('../../res/assets/sun4.jpg'),
+        
+      },
     ],
   },
   {
@@ -84,8 +97,20 @@ const cloths = [
       },
       {
         id: '2',
-        name: 'blue jeans',
+        name: 'Blue jeans',
         image: require('../../res/assets/jean3.jpg'),
+       
+      },
+      {
+        id: '3',
+        name: 'Red Trouser',
+        image: require('../../res/assets/jean2.jpg'),
+       
+      },
+      {
+        id: '4',
+        name: 'Black Trouser',
+        image: require('../../res/assets/jeans1.jpg'),
        
       },
     ],
