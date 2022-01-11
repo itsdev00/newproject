@@ -76,20 +76,20 @@ const styles = StyleSheet.create({
     
   },
   container: {
-    flex: 8,
+    flex: 1,
     backgroundColor:COLORS.yellow
     
   },
   lower: {
-    //flex: 0.8,
-    marginTop:96,
+    
+    marginTop:75,
     justifyContent:'flex-end',
     flexDirection: 'row',
+    backgroundColor:COLORS.yellow,
     
   },
   lowerButton: {
     width: '50%',
     borderRadius: 0,
-    
   },
 });
