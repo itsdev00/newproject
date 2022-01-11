@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text,StyleSheet } from 'react-native'
+import { View, Text,StyleSheet,ScrollView } from 'react-native'
 import AuthenticationButton from '../../components/AuthenticationButton';
 
 import COLORS from '../../consts/colors';
@@ -7,6 +7,7 @@ import COLORS from '../../consts/colors';
 
 const CartScreen = ({navigation}) => {
     return (
+        <ScrollView>
         <View style ={styles.contain}>
             <View style={styles.container}>
              <Text style={styles.headerTitle}>Cart</Text>
@@ -16,6 +17,7 @@ const CartScreen = ({navigation}) => {
         container={styles.btn}
         Onpress={()=> navigation.navigate('PlaceOrderScreen')}/>
         </View>
+        </ScrollView>
        
     );
 }
