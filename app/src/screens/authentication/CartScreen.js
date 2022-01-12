@@ -7,17 +7,19 @@ import COLORS from '../../consts/colors';
 
 const CartScreen = ({navigation}) => {
     return (
-        <ScrollView>
+        
         <View style ={styles.contain}>
             <View style={styles.container}>
              <Text style={styles.headerTitle}>Cart</Text>
              </View>
-
+        <Text style={styles.cart}> Cart Data is rendering on console not on screen</Text>
+        <Text style={styles.cart}> NEED SOME TIME , CLICK PLACE ORDER!</Text>
         <AuthenticationButton buttonName={'Place order'}
         container={styles.btn}
         Onpress={()=> navigation.navigate('PlaceOrderScreen')}/>
         </View>
-        </ScrollView>
+        
+       
        
     );
 }
@@ -33,10 +35,11 @@ const styles = StyleSheet.create({
         alignItems:'center',
         marginTop:"5%",
         marginLeft:'1%',
-        justifyContent:'center'
+        justifyContent:'center',
+        backgroundColor:COLORS.grey,
     },
     btn: {
-        marginTop:'150%',
+        marginTop:'135%',
             
     },
     headerTitle: {
@@ -47,5 +50,10 @@ const styles = StyleSheet.create({
         lineHeight: 30,
         marginTop:'10%',
         marginLeft:'1%',
-              },
+    },
+    cart:{
+        marginTop:"5%",
+
+    }
+    
 })
