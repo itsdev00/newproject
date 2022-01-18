@@ -6,8 +6,8 @@ import COLORS from '../../consts/colors';
 import {getData} from '../../utility/Utility';
 
 
-const CartScreen = (props,{route}) => {
-    const [cart, setCart] = useState(props.route.params.cartData)    
+const CartScreen = ({navigation,route}) => {
+    const [cart, setCart] = useState(route.params.cartData)    
     
     return (
         <View style ={styles.contain}>
@@ -27,6 +27,7 @@ const CartScreen = (props,{route}) => {
         <AuthenticationButton 
         buttonName={'Place order'}
         container={styles.btn}
+        Onpress={() => navigation.navigate('PlaceOrderScreen')}
         />
         
         </View>
