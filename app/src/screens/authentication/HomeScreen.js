@@ -30,6 +30,20 @@ const clothCategories = [
 ];
 
 const Card = ({cloth, navigation}) => {
+const [cart,setCart]=useState([])
+const HomeData= async() => {
+  let obj = {
+    clothing: cloth.id,
+    name:cloth.name,
+    price:cloth.price
+    
+  };
+ cart.push(obj)
+ 
+ console.log(cart);
+ navigation.navigate('CartScreen',{cartData:cart});
+}
+
   return (
     <TouchableOpacity  activeOpacity={0.8}>
       <View style={style.cardContainer}>
@@ -46,12 +60,17 @@ const Card = ({cloth, navigation}) => {
         <View style={style.cardDetailsContainer}>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
             <Text
-              style={{fontWeight: 'bold', color: COLORS.dark, fontSize: 20}}>
+              style={{fontWeight: 'bold', color: COLORS.dark, fontSize: 18}}>
               {cloth?.name}
             </Text>
-            <Text>+</Text>
-           
-          </View>
+            <Text onPress={HomeData} style={{fontSize:35, color:'blue'}}>+</Text>
+        </View>
+        <View style={{flexDirection: 'column', justifyContent: 'space-between'}}>
+            <Text
+              style={{fontWeight: 'bold', color: COLORS.dark, fontSize: 18}}>
+              {cloth?.price}
+            </Text>
+        </View>
           </View>
       </View>
     </TouchableOpacity>
@@ -76,7 +95,7 @@ const HomeScreen = ({navigation}) => {
     <SafeAreaView style={{backgroundColor:COLORS.white,flex:1}}>
       <View style={style.header}>
         <Icon name="sort-variant" size={28} color={COLORS.primary}  />
-        <TouchableOpacity onPress={()=>navigation.navigate('CartScreen')}>
+        <TouchableOpacity onPress={()=>navigation.navigate('PlaceOrderScreen')}>
         <Icon name="cart-outline" size={28} color={COLORS.primary}
          />
         </TouchableOpacity>
@@ -200,12 +219,12 @@ const style=StyleSheet.create({
       cardImageContainer: {
         height: 100,
         width: 140,
-        backgroundColor: COLORS.grey,
+        backgroundColor: COLORS.white,
         borderRadius: 20,
       },
       cardDetailsContainer: {
         height: 120,
-        backgroundColor: COLORS.white,
+        backgroundColor:'#dae685',
         flex: 1,
         borderTopRightRadius: 10,
         borderBottomRightRadius: 10,

@@ -4,6 +4,7 @@ import AppIcon from '../../components/AppIcon';
 import React, {useState} from 'react';
 import AuthenticationButton from '../../components/AuthenticationButton';
 import {Picker} from '@react-native-picker/picker';
+import COLORS from '../../consts/colors';
 
 import {setData} from '../../utility/Utility';
 
@@ -27,7 +28,6 @@ const SignUpScreen = ({navigation}) => {
       ans:ans,
     };
     let res=await setData(email,obj);
-    //console.warn('sign up log '+res);
     if(res==200){
       navigation.navigate('HomePage');
     }
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
   },
   container:{
     flex:1,
-    backgroundColor:'#3b444b'
+    backgroundColor:'#dae685' 
   },
   picker:{
     width:280,

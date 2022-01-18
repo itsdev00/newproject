@@ -65,11 +65,12 @@ const LoginScreen = ({navigation}) => {
 export default LoginScreen;
 const styles = StyleSheet.create({
   upper: {
+    flex:95,
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: '11%',
     marginBottom:'15.6%' ,
-    backgroundColor:COLORS.yellow,
+    backgroundColor:'#dae685',
     borderTopLeftRadius: 40,
     borderTopRightRadius:40,
     
@@ -77,15 +78,15 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor:COLORS.yellow
+    backgroundColor:'#dae685'
     
   },
   lower: {
-    
+    flex:5,
     marginTop:75,
     justifyContent:'flex-end',
     flexDirection: 'row',
-    backgroundColor:COLORS.yellow,
+    backgroundColor:'#dae685',
     
   },
   lowerButton: {

@@ -17,6 +17,7 @@ const ForgotPasswordScreen = ({navigation}) => {
        console.log(JSON.stringify(user))
        if(user.email== email && user.ans == ans && user.pickerValue==pickerValue){
         console.log('forgot password success');
+        alert('Your pasword is: '+user.password);
         console.warn('Your pasword is: '+user.password);
         
        }

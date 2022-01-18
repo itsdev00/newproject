@@ -1,31 +1,47 @@
 import React from 'react'
-import { View, Text,StyleSheet,ScrollView } from 'react-native'
+import { View, Text,StyleSheet ,FlatList,TouchableOpacity} from 'react-native'
+import { useState,useEffect } from 'react/cjs/react.development';
 import AuthenticationButton from '../../components/AuthenticationButton';
-
 import COLORS from '../../consts/colors';
+import {getData} from '../../utility/Utility';
 
 
-const CartScreen = ({navigation}) => {
+const CartScreen = (props,{route}) => {
+    const [cart, setCart] = useState(props.route.params.cartData)    
+    
     return (
-        
         <View style ={styles.contain}>
             <View style={styles.container}>
              <Text style={styles.headerTitle}>Cart</Text>
-             </View>
-        <Text style={styles.cart}> Cart Data is rendering on console not on screen</Text>
-        <Text style={styles.cart}> NEED SOME TIME , CLICK PLACE ORDER!</Text>
-        <AuthenticationButton buttonName={'Place order'}
+             {cart != undefined && <FlatList
+          data={cart}
+          renderItem={({ item }) =>
+            <View style={styles.data}>
+              
+                  <Text style={styles.textStyle}>Name :    {item.name}</Text>
+                  <Text style={styles.textStyle}>Price :    {item.price}</Text>
+                 
+            </View>
+          } />}
+
+        <AuthenticationButton 
+        buttonName={'Place order'}
         container={styles.btn}
-        Onpress={()=> navigation.navigate('PlaceOrderScreen')}/>
-        </View>
+        />
         
-       
+        </View>
+        </View>
        
     );
 }
 
 export default CartScreen;
 const styles = StyleSheet.create({
+    
+    data: {
+      marginTop:80,
+      
+      },
     contain:{
         alignItems:'center',
         backgroundColor:COLORS.grey,
@@ -35,11 +51,12 @@ const styles = StyleSheet.create({
         alignItems:'center',
         marginTop:"5%",
         marginLeft:'1%',
-        justifyContent:'center',
-        backgroundColor:COLORS.grey,
+        justifyContent:'center'
     },
     btn: {
-        marginTop:'135%',
+        marginTop:'40%',
+        marginBottom:60,
+        width:300
             
     },
     headerTitle: {
@@ -50,10 +67,10 @@ const styles = StyleSheet.create({
         lineHeight: 30,
         marginTop:'10%',
         marginLeft:'1%',
-    },
-    cart:{
-        marginTop:"5%",
-
-    }
-    
+              },
+    textStyle:{
+      color:'black',
+      fontSize:20,
+      marginTop:10,
+              }
 })
